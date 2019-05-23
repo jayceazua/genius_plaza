@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Recipe
+from .models import Recipe, Step, Ingredient
 # Create your views here.
 
 
 def index_recipe(request):
-    return render(request, 'recipes/index.html')
+    pass
 
 
 def create_recipe(request):
