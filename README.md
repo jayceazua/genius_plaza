@@ -1,10 +1,11 @@
 # genius_plaza
-
+### Run Django Commands
+ - docker-compose run web python3 /code/manage.py [options]
+ 
 ### Startup Docker Instructions:
-1. docker-compose run web python3 /code/manage.py [options]
-2. docker build .
-3. docker-compose build --no-cache 
-4. docker-compose up
+1. docker build .
+2. docker-compose build --no-cache 
+3. docker-compose up
 
 ## Best-to-use:
 Postman:
