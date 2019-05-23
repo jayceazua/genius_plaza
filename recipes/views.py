@@ -1,24 +1,21 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Recipe, Step, Ingredient
-# Create your views here.
+from recipes.models import Recipe, Step, Ingredient
+from rest_framework import viewsets
+from .serializers import RecipeSerializer, StepSerializer, IngredientSerializer
 
 
-def index_recipe(request):
-    pass
+class RecipeViewSet(viewsets.ModelViewSet):
+  queryset = Recipe.objects.all()
+  serializer_class = RecipeSerializer
 
 
-def create_recipe(request):
-    pass
+class StepViewSet(viewsets.ModelViewSet):
+  queryset = Step.objects.all()
+  serializer_class = StepSerializer
 
 
-def read_recipe(request, username):
-    pass
+class IngredientViewSet(viewsets.ModelViewSet):
+  queryset = Ingredient.objects.all()
+  serializer_class = IngredientSerializer
 
-
-def update_receipe(request, id):
-    pass
-
-
-def delete_recipe(request, id):
-    pass
