@@ -1,8 +1,24 @@
 from rest_framework import serializers
-from .models import Recipe, Step, Ingredient
+from recipes.models import Recipe, Step, Ingredient
 
 
-class RecipeSerializer(serializers.ModelSerializer):
+class RecipeSerializer(serializers.HyperlinkedModelSerializer):
+    steps = serializers.StringRelatedField(many=True)
+    ingreidents = serializers.StringRelatedField(many=True)
+
     class Meta:
         model = Recipe
-        fields = "__all__"
+        # queryset = Recipe.objects.all()
+        fields = ('owner', "name", 'steps', 'ingredients', "url")
+
+
+class StepSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Step
+        fields = ("id", "step_text", 'recipe', "url")
+
+
+class IngredientSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Ingredient
+        fields = ("id", "text", "recipe", "url")
