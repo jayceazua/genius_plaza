@@ -6,12 +6,12 @@ from datetime import datetime
 # python3 manage.py makemigrations recipes
 
 
-class Recipes(models.Model):
+class Recipe(models.Model):
     # one recipe to one user
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=False)
-    # many steps to one recipe
-    # many ingredients to one recipe
+    # one to many recipe
+    # one to many recipe
 
     def __str__(self):
         return self.name
@@ -20,19 +20,23 @@ class Recipes(models.Model):
         verbose_name_plural = "Recipes"
 
 
-class Steps(models.Model):
+class Step(models.Model):
+    step_text = models.CharField(max_length=200, null=False)
+    # many steps to one recipe
 
     def __str__(self):
-        return
+        return self.step_text
 
     class Meta:
         verbose_name_plural = "Steps"
 
 
-class Ingredients(models.Model):
+class Ingredient(models.Model):
+    text = models.CharField(max_length=200, null=False)
+    # many ingredients to one recipe
 
     def __str__(self):
-        return
+        return self.text
 
     class Meta:
         verbose_name_plural = "Ingredients"
