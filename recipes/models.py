@@ -7,7 +7,7 @@ from datetime import datetime
 
 class Recipe(models.Model):
     # one recipe to one user
-    owner = models.ForeignKey(get_user_model(), related_name="recipes", on_delete=models.CASCADE, null=False)
+    owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=False, blank=True, unique=True)
     # one to many recipe
     # one to many recipe
