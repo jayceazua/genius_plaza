@@ -1,6 +1,6 @@
 # genius_plaza
 ### Run Django Commands
- - docker-compose run web python3 /code/manage.py [options]
+ - `$ docker-compose run web python3 /code/manage.py [options]`
 
 ### Startup Docker Instructions:
 1. docker build .
