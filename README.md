@@ -8,27 +8,27 @@
 3. docker-compose up
 
 ## Best-to-use:
-#### Postman
-<br>
+Postman:
 Base_url: `http://localhost:8000`
-<br>
-Get-Recipe-from-specific-user: 
+Get-Recipe-from-specific-user:
  - _INDEX: `admin/<user>`_
- <br>
-Recipe-Endpoints: 
+
+
+
+### Recipe-Endpoints:
  - INDEX: `recipes`
  - CREATE: `recipes/`
  - READ: `recipes/<int:id>`
  - UPDATE: `recipes/<int:id>`
  - DELETE: `recipes/<int:id>`
- <br>
- Step-Endpoints: 
+
+ ### Step-Endpoints: 
  - CREATE: `steps/`
  - READ: `steps/<int:id>`
  - UPDATE: `steps/<int:id>`
  - DELETE: `steps/<int:id>`
- <br>
-Ingredient-Endpoints: 
+
+### Ingredient-Endpoints:
  - CREATE: `ingredients/`
  - READ: `ingredients/<int:id>`
  - UPDATE: `ingredients/<int:id>`
